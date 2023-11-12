@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "f94eabaa-2274-41bc-8eae-10b8e75af151",
+		"name": "Comment on notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31108949"
+	},
+	"item": [
+		{
+			"name": "Create note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"CommentID\":789,\"NoteID\":\"456\",\"UserID\":\"123\",\"Content\":\"Great discussion!\",\"CreatedAt\": \"2023-11-10T11:15:00\",\"UpdatedAt\":\"2023-11-10T11:15:00“},{\"CommentID\":788,\"NoteID\":\"457\",\"UserID\":\"123\",\"Content\":\"Great\",\"CreatedAt\":\"2023-11-11T11:15:00\",\"UpdatedAt\":\"2023-11-11T11:15:00“}]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update note Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"NoteID\":\"456\",\"UserID\":\"123\",\"Content\":\"Great discussion!\",\"CreatedAt\": \"2023-11-10T11:15:00\",\"UpdatedAt\":\"2023-11-10T11:15:00“}]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/{commentid}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"{commentid}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/{commentid}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"{commentid}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

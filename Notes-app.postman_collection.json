@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "6fcfee6a-43bf-4f1d-85da-f84dcc52e925",
+		"name": "Notes-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31108949"
+	},
+	"item": [
+		{
+			"name": "Create note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"NoteID\": \"456\",\"Title\":\"Meeting Notes\",\"Content\":\"Agenda:\\n1.Project updates\\n2.Budget discussion\",\"Category\":\"Meetings\",\"CreatedAt\":\"2023-11-10T10:30:00\",\"UpdatedAt\":\"2023-11-10T11:00:00“}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update note",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Title\":\"Meeting Notes\",\"Content\":\"Agenda:\\n1.Project updates\\n2.Budget discussion\",\"Category\":\"Meetings\",\"CreatedAt\":\"2023-11-10T10:30:00\",\"UpdatedAt\":\"2023-11-10T11:00:00“}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notes/{noteID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notes",
+						"{noteID}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get note",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notes/{noteID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notes",
+						"{noteID}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all notes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notes?start=0&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/notes/{noteID}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notes",
+						"{noteID}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
